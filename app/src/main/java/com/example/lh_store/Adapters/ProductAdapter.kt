@@ -26,7 +26,7 @@ class ProductAdapter(
 
         holder.binding.apply {
             nameProduct.text = product.name
-            priceProduct.text = "Price: IDR${product.price}"
+            priceProduct.text = "IDR ${product.price}"
             Glide.with(imgProduct.context)
                 .load(product.image)
                 .into(imgProduct)

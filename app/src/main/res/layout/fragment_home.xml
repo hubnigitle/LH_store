@@ -26,7 +26,8 @@
             android:layout_height="wrap_content"
             android:minHeight="150dp"
             app:layout_constraintHeight_min="150dp"
-            tools:listitem="@layout/promo_item"/>
+            tools:listitem="@layout/promo_item"
+            android:padding="8dp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -42,6 +43,8 @@
             android:layout_height="match_parent"
             android:minHeight="400dp"
             tools:ignore="SpeakableTextPresentCheck"
-            tools:listitem="@layout/product_item"/>
+            tools:listitem="@layout/product_item"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            android:padding="8dp"/>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

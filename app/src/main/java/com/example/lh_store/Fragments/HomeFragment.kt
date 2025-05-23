@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.HorizontalScrollView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lh_store.Api.ApiConfig
 import com.example.lh_store.Adapters.ProductAdapter
@@ -36,7 +37,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.rvProduct.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvProduct.layoutManager = GridLayoutManager(requireContext(), 2)
         fetchProducts()
         binding.rvPromo.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         fetchPromos()
