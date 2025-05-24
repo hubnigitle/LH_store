@@ -1,11 +1,12 @@
 package com.example.lh_store.Fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.HorizontalScrollView
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,10 +15,12 @@ import com.example.lh_store.Adapters.ProductAdapter
 import com.example.lh_store.Adapters.PromoAdapter
 import com.example.lh_store.Models.ResponseProduct
 import com.example.lh_store.Models.ResponsePromo
+import com.example.lh_store.R
 import com.example.lh_store.databinding.FragmentHomeBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class HomeFragment : Fragment() {
 
@@ -26,6 +29,13 @@ class HomeFragment : Fragment() {
 
     private lateinit var productAdapter: ProductAdapter
     private lateinit var promoAdapter: PromoAdapter
+
+    // Search lists
+    private var productList = arrayListOf<ResponseProduct>()
+    private var searchProductList = arrayListOf<ResponseProduct>()
+
+    private var promoList = arrayListOf<ResponsePromo>()
+    private var searchPromoList = arrayListOf<ResponsePromo>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -38,9 +48,76 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.rvProduct.layoutManager = GridLayoutManager(requireContext(), 2)
-        fetchProducts()
         binding.rvPromo.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+        fetchProducts()
         fetchPromos()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Setup SearchView saat fragment resume (activity sudah siap)
+        setupSearchView()
+    }
+
+    private fun setupSearchView() {
+        val mainActivity = activity
+
+        if (mainActivity != null) {
+            val searchView = mainActivity.findViewById<SearchView>(R.id.search)
+
+            if (searchView != null) {
+                searchView.clearFocus()
+                searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                    override fun onQueryTextSubmit(query: String?): Boolean {
+                        searchView.clearFocus()
+                        return true
+                    }
+
+                    override fun onQueryTextChange(newText: String?): Boolean {
+                        searchProducts(newText)
+                        return false
+                    }
+                })
+            } else {
+                Toast.makeText(requireContext(), "SearchView tidak ditemukan", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            Log.e("HomeFragment", "Activity is null!")
+        }
+    }
+
+    private fun searchProducts(searchText: String?) {
+        searchProductList.clear()
+        val searchQuery = searchText?.lowercase(Locale.getDefault()) ?: ""
+
+        if (searchQuery.isNotEmpty()) {
+            productList.forEach { product ->
+                // Filter berdasarkan field yang ada di ResponseProduct
+                val productMatches = listOf(
+                    product.name?.lowercase(Locale.getDefault())?.contains(searchQuery) == true,
+                    product.category?.lowercase(Locale.getDefault())?.contains(searchQuery) == true,
+                    product.os?.lowercase(Locale.getDefault())?.contains(searchQuery) == true
+                ).any { it }
+
+                if (productMatches) {
+                    searchProductList.add(product)
+                }
+            }
+        } else {
+            // Jika search kosong, tampilkan semua produk
+            searchProductList.addAll(productList)
+        }
+
+        // Update adapter dengan hasil filter
+        updateProductAdapter()
+    }
+
+    private fun updateProductAdapter() {
+        if (::productAdapter.isInitialized) {
+            productAdapter = ProductAdapter(searchProductList)
+            binding.rvProduct.adapter = productAdapter
+        }
     }
 
     private fun fetchProducts() {
@@ -50,7 +127,13 @@ class HomeFragment : Fragment() {
             ) {
                 if (response.isSuccessful) {
                     response.body()?.let { products ->
-                        productAdapter = ProductAdapter(products)
+                        productList.clear()
+                        productList.addAll(products)
+
+                        searchProductList.clear()
+                        searchProductList.addAll(products)
+
+                        productAdapter = ProductAdapter(searchProductList)
                         binding.rvProduct.adapter = productAdapter
                     }
                 } else {
@@ -71,7 +154,13 @@ class HomeFragment : Fragment() {
             ) {
                 if (response.isSuccessful) {
                     response.body()?.let { promos ->
-                        promoAdapter = PromoAdapter(promos)
+                        promoList.clear()
+                        promoList.addAll(promos)
+
+                        searchPromoList.clear()
+                        searchPromoList.addAll(promos)
+
+                        promoAdapter = PromoAdapter(searchPromoList)
                         binding.rvPromo.adapter = promoAdapter
                     }
                 } else {

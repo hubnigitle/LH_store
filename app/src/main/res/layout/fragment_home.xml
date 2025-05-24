@@ -13,6 +13,7 @@
         android:background="@color/light_cream">
 
         <TextView
+            android:id="@+id/promo_tag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Big Deals"

@@ -4,6 +4,7 @@ import com.example.lh_store.Models.ResponseProduct
 import com.example.lh_store.Models.ResponsePromo
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface ApiService {
     @GET("product")
