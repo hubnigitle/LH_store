@@ -13,6 +13,10 @@ object ApiConfig {
             .build()
     }
 
+    val instance: ApiService by lazy {
+        getRetrofit().create(ApiService::class.java)
+    }
+
     fun getService(): ApiService {
         return getRetrofit().create(ApiService::class.java)
     }

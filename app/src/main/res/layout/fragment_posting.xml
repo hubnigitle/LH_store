@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="12dp"
+        android:outlineSpotShadowColor="@color/orange"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add New Product"
+                android:textStyle="bold"
+                android:textColor="@color/orange"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:layout_marginVertical="32dp"/>
+
+            <TextView
+                style="@style/FormLabel"
+                android:text="Name"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/post_name"
+                style="@style/FormInput"
+                android:hint="Samsung Galaxy A36 5G"/>
+
+            <TextView
+                style="@style/FormLabel"
+                android:text="Category"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/post_category"
+                style="@style/FormInput"
+                android:hint="handphone/laptop"/>
+
+
+            <TextView
+                style="@style/FormLabel"
+                android:text="Image Url"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/post_img_url"
+                style="@style/FormInput"
+                android:hint="http://img.jpg"/>
+
+            <TextView
+                style="@style/FormLabel"
+                android:text="Operation System"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/post_os"
+                style="@style/FormInput"
+                android:hint="Android 16"/>
+
+            <TextView
+                style="@style/FormLabel"
+                android:text="Price"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/post_price"
+                style="@style/FormInput"
+                android:hint="6000000"/>
+
+            <TextView
+                style="@style/FormLabel"
+                android:text="Battery Capacity"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/post_battery_capacity"
+                style="@style/FormInput"
+                android:hint="6000 mAh"/>
+
+            <TextView
+                style="@style/FormLabel"
+                android:text="Released Year"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/post_released_year"
+                style="@style/FormInput"
+                android:hint="2025"/>
+
+            <TextView
+                style="@style/FormLabel"
+                android:text="RAM"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/post_ram"
+                style="@style/FormInput"
+                android:hint="8 GB"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="post"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_style"
+                android:layout_marginVertical="16dp"
+                android:textSize="16sp"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</ScrollView>

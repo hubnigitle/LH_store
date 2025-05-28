@@ -12,11 +12,11 @@ import com.example.lh_store.R
 import com.example.lh_store.databinding.FragmentProductDetailBinding
 
 class ProductDetailFragment : Fragment() {
-
     private var _binding: FragmentProductDetailBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var product: ResponseProduct
+    private var isUpdate = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?

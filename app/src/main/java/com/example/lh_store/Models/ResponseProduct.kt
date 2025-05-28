@@ -14,7 +14,7 @@ data class ResponseProduct(
 	val os: String? = null,
 
 	@field:SerializedName("price")
-	val price: Int? = null,
+	val price: Number? = null,
 
 	@field:SerializedName("name")
 	val name: String? = null,
@@ -29,7 +29,7 @@ data class ResponseProduct(
 	val category: String? = null,
 
 	@field:SerializedName("released")
-	val released: Int? = null,
+	val released: Number? = null,
 
 	@field:SerializedName("ram")
 	val ram: String? = null

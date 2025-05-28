@@ -5,8 +5,8 @@
         android:icon="@drawable/ic_home"/>
     <item
         android:id="@+id/manageFragment"
-        android:title="Manage"
-        android:icon="@drawable/ic_manage"/>
+        android:title="Post"
+        android:icon="@drawable/ic_posting"/>
     <item
         android:id="@+id/aboutFragment"
         android:title="About"
