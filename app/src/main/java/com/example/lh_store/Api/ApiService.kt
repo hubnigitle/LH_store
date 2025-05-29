@@ -31,7 +31,7 @@ interface ApiService {
         @Path("id") id: String
     ): Call<PostProductResponse>
 
-    @DELETE("promo/{id}")
+    @DELETE("product/{id}")
     fun deleteProduct(
         @Path("id") id: String
     ): Call<DeleteProductResponse>

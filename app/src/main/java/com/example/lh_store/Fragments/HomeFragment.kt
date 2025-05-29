@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lh_store.Api.ApiConfig
@@ -16,6 +17,7 @@ import com.example.lh_store.Adapters.PromoAdapter
 import com.example.lh_store.Models.ResponseProduct
 import com.example.lh_store.Models.ResponsePromo
 import com.example.lh_store.R
+import com.example.lh_store.ViewModels.ProductViewModel
 import com.example.lh_store.databinding.FragmentHomeBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -29,6 +31,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var productAdapter: ProductAdapter
     private lateinit var promoAdapter: PromoAdapter
+    private val productViewModel: ProductViewModel by activityViewModels()
 
     // Search lists
     private var productList = arrayListOf<ResponseProduct>()
@@ -52,6 +55,14 @@ class HomeFragment : Fragment() {
 
         fetchProducts()
         fetchPromos()
+
+        // Observe the product deletion event
+        productViewModel.isProductDeleted.observe(viewLifecycleOwner) { isDeleted ->
+            if (isDeleted) {
+                fetchProducts() // Refresh the product list
+                productViewModel.resetProductDeleted() // Reset the flag
+            }
+        }
     }
 
     override fun onResume() {
