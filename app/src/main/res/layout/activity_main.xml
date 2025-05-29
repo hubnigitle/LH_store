@@ -19,7 +19,8 @@
             android:textStyle="bold"
             android:textSize="24sp"
             android:textColor="@color/white"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/jomolhari"/>
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.appcompat.widget.SearchView
@@ -35,7 +36,7 @@
         app:queryHint="Search..."
         app:closeIcon="@drawable/baseline_clear_24"
         app:searchIcon="@drawable/search"
-        android:background="@drawable/search_bkg"/>
+        android:background="@drawable/search_bkg" />
 
     <fragment
         android:id="@+id/nav_host_fragment"

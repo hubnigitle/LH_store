@@ -26,7 +26,7 @@ data class PostProductRequest(
     val category: String? = null,
 
     @field:SerializedName("released")
-    val released: String? = null,
+    val released: Int? = null,
 
     @field:SerializedName("ram")
     val ram: String? = null

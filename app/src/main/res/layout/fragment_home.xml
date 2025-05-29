@@ -17,9 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Big Deals"
-            android:layout_margin="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"
             android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:fontFamily="@font/jomolhari"
+            android:textColor="@color/black"
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_promo"
@@ -34,9 +39,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="All Products"
-            android:layout_margin="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"
             android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:fontFamily="@font/jomolhari"
+            android:textColor="@color/black"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_product"

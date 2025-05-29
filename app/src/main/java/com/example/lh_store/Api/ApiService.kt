@@ -25,7 +25,7 @@ interface ApiService {
         @Body product: PostProductRequest
     ): Call<PostProductResponse>
 
-    @PUT("promo/{id}")
+    @PUT("product/{id}")
     fun updateProduct(
         @Body product: PostProductRequest,
         @Path("id") id: String

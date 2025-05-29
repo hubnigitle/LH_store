@@ -5,41 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/LogoAbout"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/logo_shape"
-        android:outlineSpotShadowColor="@color/deep_red"
-        android:padding="24dp"
-        android:text="L&amp;H"
-        android:textColor="@color/white"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher_foreground"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.20999998" />
-
-    <TextView
-        android:id="@+id/descLogoAbout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Laptop and Handphone Expert"
-        android:textStyle="italic|bold"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="64dp"
+        />
 
     <GridLayout
+        android:id="@+id/grid"
+        android:layout_marginTop="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/descLogoAbout"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/LogoAbout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:columnCount="2">
@@ -61,13 +44,15 @@
                 android:text="0"
                 android:textSize="64sp"
                 android:gravity="center"
-                android:textColor="@color/deep_red"/>
+                android:textColor="@color/deep_red"
+                android:fontFamily="@font/jomolhari"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Total Product"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:fontFamily="@font/jomolhari"/>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -81,19 +66,22 @@
             android:layout_row="0"
             app:cardBackgroundColor="@color/light_cream"
             android:layout_margin="4dp">
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="0"
-                android:textSize="64sp"
+                android:layout_width="104dp"
+                android:layout_height="151dp"
+                android:fontFamily="@font/jomolhari"
                 android:gravity="center"
-                android:textColor="@color/deep_red"/>
+                android:text="0"
+                android:textColor="@color/deep_red"
+                android:textSize="64sp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Total Laptop"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:fontFamily="@font/jomolhari"/>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -107,20 +95,24 @@
             android:layout_row="1"
             app:cardBackgroundColor="@color/light_cream"
             android:layout_margin="4dp">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="0"
                 android:textSize="64sp"
                 android:gravity="center"
-                android:textColor="@color/deep_red" />
+                android:textColor="@color/deep_red"
+                android:fontFamily="@font/jomolhari"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Total Handphone"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:fontFamily="@font/jomolhari"/>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -135,22 +127,83 @@
             app:cardBackgroundColor="@color/light_cream"
             android:layout_margin="4dp">
             <TextView
+                android:id="@+id/amount_active_promo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="0"
                 android:textSize="64sp"
                 android:gravity="center"
-                android:textColor="@color/deep_red"/>
+                android:textColor="@color/deep_red"
+                android:fontFamily="@font/jomolhari"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Total Active Promo"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:fontFamily="@font/jomolhari"/>
+
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
+    <!-- Call item -->
 
+    <LinearLayout
+        android:id="@+id/call_service"
+        android:layout_marginTop="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/grid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/mail_service">
+
+        <ImageView
+            android:id="@+id/call_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_call_24"
+            android:contentDescription="Call icon" />
+
+        <TextView
+            android:id="@+id/phone_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+123 456 7890"
+            android:textSize="16sp"
+            android:layout_marginStart="12dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mail_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/call_service"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="64dp">
+
+        <ImageView
+            android:id="@+id/mail_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_email_24" />
+
+        <TextView
+            android:id="@+id/mail_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lhstore@gmail.com"
+            android:textSize="16sp"
+            android:layout_marginStart="12dp" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

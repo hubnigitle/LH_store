@@ -56,6 +56,14 @@ class HomeFragment : Fragment() {
         fetchProducts()
         fetchPromos()
 
+        // observe the product update
+        productViewModel.isProductUpdated.observe(viewLifecycleOwner) { isUpdated ->
+            if (isUpdated) {
+                fetchProducts()
+                productViewModel.resetProductUpdated()
+            }
+        }
+
         // Observe the product deletion event
         productViewModel.isProductDeleted.observe(viewLifecycleOwner) { isDeleted ->
             if (isDeleted) {
@@ -141,6 +149,8 @@ class HomeFragment : Fragment() {
                         productList.clear()
                         productList.addAll(products)
 
+                        productViewModel.setProductCount(products.size)
+
                         searchProductList.clear()
                         searchProductList.addAll(products)
 
@@ -167,6 +177,8 @@ class HomeFragment : Fragment() {
                     response.body()?.let { promos ->
                         promoList.clear()
                         promoList.addAll(promos)
+
+                        productViewModel.setPromoCount(promos.size)
 
                         searchPromoList.clear()
                         searchPromoList.addAll(promos)

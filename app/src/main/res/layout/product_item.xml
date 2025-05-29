@@ -29,7 +29,8 @@
         android:textColor="@color/dark_grey"
         android:layout_marginTop="8dp"
         android:text="name"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/jomolhari"/>
 
     <TextView
         android:id="@+id/priceProduct"
@@ -40,7 +41,8 @@
         android:textColor="@color/deep_red"
         android:text="price"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/jomolhari"/>
 
 </LinearLayout>
 </androidx.cardview.widget.CardView>

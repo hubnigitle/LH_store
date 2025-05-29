@@ -76,7 +76,7 @@ class PostingFragment : Fragment() {
             name = productName,
             battery = productBattery,
             category = productCategory,
-            released = productReleased.toString(),
+            released = productReleased,
             ram = productRam
         )
 

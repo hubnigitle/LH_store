@@ -27,80 +27,97 @@
                 android:textColor="@color/orange"
                 android:textAlignment="center"
                 android:textSize="20sp"
-                android:layout_marginVertical="32dp"/>
+                android:layout_marginVertical="32dp"
+                android:fontFamily="@font/jomolhari"/>
 
             <TextView
                 style="@style/FormLabel"
-                android:text="Name"/>
+                android:text="Name"
+                android:fontFamily="@font/jomolhari"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/post_name"
                 style="@style/FormInput"
-                android:hint="Samsung Galaxy A36 5G"/>
+                android:hint="Samsung Galaxy A36 5G"
+                android:fontFamily="@font/jomolhari"/>
 
             <TextView
                 style="@style/FormLabel"
-                android:text="Category"/>
+                android:text="Category"
+                android:fontFamily="@font/jomolhari"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/post_category"
                 style="@style/FormInput"
-                android:hint="handphone/laptop"/>
+                android:hint="handphone/laptop"
+                android:fontFamily="@font/jomolhari"/>
 
 
             <TextView
                 style="@style/FormLabel"
-                android:text="Image Url"/>
+                android:text="Image Url"
+                android:fontFamily="@font/jomolhari"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/post_img_url"
                 style="@style/FormInput"
-                android:hint="http://img.jpg"/>
+                android:hint="http://img.jpg"
+                android:fontFamily="@font/jomolhari"/>
 
             <TextView
                 style="@style/FormLabel"
-                android:text="Operation System"/>
+                android:text="Operation System"
+                android:fontFamily="@font/jomolhari"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/post_os"
                 style="@style/FormInput"
-                android:hint="Android 16"/>
+                android:hint="Android 16"
+                android:fontFamily="@font/jomolhari"/>
 
             <TextView
                 style="@style/FormLabel"
-                android:text="Price"/>
+                android:text="Price"
+                android:fontFamily="@font/jomolhari"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/post_price"
                 style="@style/FormInput"
-                android:hint="6000000"/>
+                android:hint="6000000"
+                android:fontFamily="@font/jomolhari"/>
 
             <TextView
                 style="@style/FormLabel"
-                android:text="Battery Capacity"/>
+                android:text="Battery Capacity"
+                android:fontFamily="@font/jomolhari"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/post_battery_capacity"
                 style="@style/FormInput"
-                android:hint="6000 mAh"/>
+                android:hint="6000 mAh"
+                android:fontFamily="@font/jomolhari"/>
 
             <TextView
                 style="@style/FormLabel"
-                android:text="Released Year"/>
+                android:text="Released Year"
+                android:fontFamily="@font/jomolhari"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/post_released_year"
                 style="@style/FormInput"
-                android:hint="2025"/>
+                android:hint="2025"
+                android:fontFamily="@font/jomolhari"/>
 
             <TextView
                 style="@style/FormLabel"
-                android:text="RAM"/>
+                android:text="RAM"
+                android:fontFamily="@font/jomolhari"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/post_ram"
                 style="@style/FormInput"
-                android:hint="8 GB"/>
+                android:hint="8 GB"
+                android:fontFamily="@font/jomolhari"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_add"
@@ -111,6 +128,7 @@
                 android:background="@drawable/btn_style"
                 android:layout_marginVertical="16dp"
                 android:textSize="16sp"
+                android:fontFamily="@font/jomolhari"
                 />
 
         </LinearLayout>

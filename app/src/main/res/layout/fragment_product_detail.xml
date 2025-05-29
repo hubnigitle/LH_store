@@ -15,6 +15,7 @@
             android:orientation="vertical"
             android:padding="24dp">
 
+            <!-- Image -->
             <ImageView
                 android:id="@+id/imgProduct"
                 android:layout_width="150dp"
@@ -22,152 +23,131 @@
                 android:scaleType="centerCrop"
                 android:layout_gravity="center_horizontal" />
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/imgProductEdit"
+                style="@style/ProductEditText"
+                android:hint="Enter image url"
+                android:textStyle="bold"
+                android:fontFamily="@font/jomolhari"/>
+
+            <!-- Name -->
             <TextView
                 android:id="@+id/nameProduct"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                style="@style/ProductTitle"
                 android:text="name"
-                android:textColor="@color/dark_grey"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp" />
+                android:fontFamily="@font/jomolhari"/>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/nameProductEdit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="name"
-                android:textColor="@color/dark_grey"
-                android:textSize="20sp"
+                style="@style/ProductEditText"
+                android:hint="Enter product name"
                 android:textStyle="bold"
-                android:layout_marginTop="16dp" />
+                android:fontFamily="@font/jomolhari"/>
 
+            <!-- Price -->
             <TextView
                 android:id="@+id/priceProduct"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                style="@style/ProductPrice"
                 android:text="price"
-                android:textSize="16sp"
-                android:textColor="@color/deep_red"
-                android:layout_marginTop="8dp"/>
+                android:fontFamily="@font/jomolhari"/>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/priceProductEdit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="price"
-                android:textSize="16sp"
+                style="@style/ProductEditText"
+                android:hint="Enter product price"
                 android:textColor="@color/deep_red"
-                android:layout_marginTop="8dp"/>
+                android:fontFamily="@font/jomolhari"/>
 
+            <!-- Other Fields -->
             <TextView
                 android:id="@+id/osProduct"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/ProductText"
                 android:text="OS"
-                android:textSize="18sp"
-                android:layout_marginTop="16dp" />
+                android:fontFamily="@font/jomolhari"/>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/osProductEdit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="OS"
-                android:textSize="18sp"
-                android:layout_marginTop="16dp" />
+                style="@style/ProductEditText"
+                android:hint="OS"
+                android:fontFamily="@font/jomolhari"/>
 
+            <!-- RAM, Battery, Category, Released -->
             <TextView
                 android:id="@+id/ramProduct"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/ProductText"
                 android:text="RAM"
-                android:textSize="18sp"
-                android:layout_marginTop="8dp" />
+                android:fontFamily="@font/jomolhari"/>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ramProductEdit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RAM"
-                android:textSize="18sp"
-                android:layout_marginTop="8dp" />
+                style="@style/ProductEditText"
+                android:hint="RAM"
+                android:fontFamily="@font/jomolhari"/>
 
             <TextView
                 android:id="@+id/batteryProduct"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/ProductText"
                 android:text="Battery"
-                android:textSize="18sp"
-                android:layout_marginTop="8dp" />
+                android:fontFamily="@font/jomolhari"/>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/batteryProductEdit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Battery"
-                android:textSize="18sp"
-                android:layout_marginTop="8dp" />
+                style="@style/ProductEditText"
+                android:hint="Battery"
+                android:fontFamily="@font/jomolhari"/>
 
             <TextView
                 android:id="@+id/categoryProduct"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/ProductText"
                 android:text="Category"
-                android:textSize="18sp"
-                android:layout_marginTop="8dp" />
+                android:fontFamily="@font/jomolhari"/>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/categoryProductEdit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Category"
-                android:textSize="18sp"
-                android:layout_marginTop="8dp" />
+                style="@style/ProductEditText"
+                android:hint="Category"
+                android:fontFamily="@font/jomolhari"/>
 
             <TextView
                 android:id="@+id/releasedProduct"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/ProductText"
                 android:text="Released"
-                android:textSize="18sp"
-                android:layout_marginTop="8dp" />
+                android:fontFamily="@font/jomolhari"/>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/releasedProductEdit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Released"
-                android:textSize="18sp"
-                android:layout_marginTop="8dp" />
+                style="@style/ProductEditText"
+                android:hint="Released"
+                android:fontFamily="@font/jomolhari"/>
 
+            <!-- Buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginVertical="32dp">
+                android:layout_marginVertical="32dp"
+                android:fontFamily="@font/jomolhari">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_edit"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="edit"
+                    android:text="Edit"
                     android:layout_marginHorizontal="4dp"
                     android:background="@drawable/btn_edit_style"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/jomolhari"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_delete"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="delete"
+                    android:text="Delete"
                     android:layout_marginHorizontal="4dp"
                     android:background="@drawable/btn_delete_style"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/jomolhari"/>
 
             </LinearLayout>
 
